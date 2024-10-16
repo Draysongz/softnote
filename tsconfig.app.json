@@ -20,5 +20,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "Pages/DailyReward.tsx"]
+  "include": ["src", "src/pages/DailyReward.tsx"]
 }

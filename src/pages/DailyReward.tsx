@@ -1,6 +1,7 @@
 
 import { Flex, Box, Text, HStack, Progress, Heading, Button } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import NavigationBar from "../components/NavigationBar";
 
 type Props = {};
 const cards = [
@@ -31,6 +32,7 @@ function DailyReward({}: Props) {
 
   return (
     <Flex
+
       minH={"100vh"}
       bgImage={"/bgImage.png"}
       bgColor={"#12161F"}
@@ -139,6 +141,8 @@ function DailyReward({}: Props) {
 
       <Button alignSelf={"center"} bgColor={"#4979D1"} color={"#fff"} w={"85vw"}
       borderRadius={"20px"} fontWeight={"500"} fontSize={"20px"}>Claim Bonus</Button>
+
+      <NavigationBar />
     </Flex>
   );
 }
