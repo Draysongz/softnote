@@ -1,4 +1,3 @@
-
 import {
   Flex,
   Text,
@@ -7,11 +6,11 @@ import {
   CardBody,
   Wrap,
   WrapItem,
-  Avatar
+  Avatar,
 } from "@chakra-ui/react";
+import NavigationBar from "../components/NavigationBar";
 
-
-type Props = {}
+type Props = {};
 
 function Achievements({}: Props) {
   return (
@@ -25,6 +24,7 @@ function Achievements({}: Props) {
       direction={"column"}
       bgRepeat={"no-repeat"}
       gap={1}
+      pb={"20%"}
     >
       <Flex direction={"column"} gap={2} p={5}>
         <Flex gap={1} justifyContent={"center"}>
@@ -226,8 +226,10 @@ function Achievements({}: Props) {
           </Flex>
         </Flex>
       </Flex>
+
+      <NavigationBar />
     </Flex>
   );
 }
 
-export default Achievements
+export default Achievements;

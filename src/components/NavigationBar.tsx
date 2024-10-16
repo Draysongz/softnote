@@ -39,7 +39,8 @@ const NavItem: React.FC<NavItemProps> = ({
         fontWeight={500}
         textAlign={"center"}
         lineHeight={'12.91px'}
-        letterSpacing={ label === 'Power Up'  ? '2px' : '0px'}
+        width={ label === 'Power Up'  ? "35px" : ""}
+        
 
       >
         {label}

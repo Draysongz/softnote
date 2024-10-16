@@ -12,6 +12,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import NavigationBar from "../components/NavigationBar";
 
 type Props = {}
 
@@ -196,6 +197,7 @@ function Friends({}: Props) {
           </Button>
         </Flex>
       </Flex>
+      <NavigationBar />
     </Flex>
   );
 }

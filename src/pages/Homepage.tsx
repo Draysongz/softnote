@@ -16,21 +16,25 @@ const SmallCardArray = [
     image: "/icons/reward.png",
     text: "Daily Reward",
     timer: "00:00",
+    link: "/daily"
   },
   {
     image: "/icons/mint.png",
     text: "Upgrade & Rush",
     timer: "00:00",
+    link:"upgrade"
   },
   {
     image: "/icons/people-add.png",
     text: "SoftNote Community",
     timer: "00:00",
+    link: "community"
   },
   {
     image: "/icons/game-chat.png",
     text: "Mini Games",
     timer: "00:00",
+    link: "games"
   },
 ];
 
