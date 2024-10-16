@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Flex, Box, Text, HStack, Progress, Heading, Button } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
