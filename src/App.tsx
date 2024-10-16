@@ -7,6 +7,7 @@ import SocialTask from "./pages/SocialTask";
 import Loading from '../component/Loading'
 import DailyReward from '../Pages/DailyReward'
 import Friends from '../Pages/Friends'
+import Achievements from '../Pages/Achievements'
 
 function App() {
 
@@ -22,9 +23,10 @@ function App() {
             <Route path='/loading' element={ <Loading />} />
         <Route path='/daily' element={<DailyReward />} />
         <Route path='/referral' element={<Friends />} />
+         <Route path='/achievements' element={<Achievements /> } />
           </Routes>
         </Router>
-    </Box>
+     </Box>
   )
 }
 

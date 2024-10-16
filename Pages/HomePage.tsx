@@ -9,11 +9,12 @@ import {
   Progress,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import React from "react";
 
 
-type Props = {};
 
-export default function HomePage({}: Props) {
+
+export default function HomePage() {
   return (
     <Flex
       minH={"100vh"}
