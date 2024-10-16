@@ -6,7 +6,7 @@ const PlayList = [
     {
         image: "/icons/BigCoin.png",
         name: "Daily Tasks",
-        path: "/daily",
+        path: "/dailytask",
     },
     {
         image: "/icons/twitter.png",

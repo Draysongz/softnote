@@ -51,7 +51,8 @@ const NavItem: React.FC<NavItemProps> = ({
 
 const NavigationBar: React.FC = () => {
   const location = useLocation();
-  const isDailyActive = location.pathname.startsWith('/daily');
+  const isCommunityActive = location.pathname.startsWith('/communities')
+  const isDailyActive = location.pathname.startsWith('/dailytask');
   const isSocialActive = location.pathname.startsWith('/socials');
   return (
     <nav className="fixed bottom-0  bg-[#12161E] w-[100vw] z-40 p-[5px]">
@@ -77,7 +78,7 @@ const NavigationBar: React.FC = () => {
               />
             </svg>
           }
-          isActive={location.pathname === "/"}
+          isActive={ isCommunityActive || location.pathname === "/"}
           label="Start The Rush"
           to="/"
         />

@@ -23,7 +23,7 @@ function App() {
           <Route path="/daily" element={<DailyReward />} />
           <Route path="/referral" element={<Friends />} />
           <Route path="/achievement" element={<Achievements />} />
-          <Route path="/community" element={<Community />} />
+          <Route path="/communities" element={<Community />}/>
         </Routes>
       </Router>
     </Box>

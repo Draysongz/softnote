@@ -9,6 +9,7 @@ import {
   Progress,
 } from "@chakra-ui/react";
 import "../index.css";
+import { Link } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar";
 
 const SmallCardArray = [
@@ -16,25 +17,25 @@ const SmallCardArray = [
     image: "/icons/reward.png",
     text: "Daily Reward",
     timer: "00:00",
-    link: "/daily"
+    path: "/daily",
   },
   {
     image: "/icons/mint.png",
     text: "Upgrade & Rush",
     timer: "00:00",
-    link:"upgrade"
+    path: "",
   },
   {
     image: "/icons/people-add.png",
     text: "SoftNote Community",
     timer: "00:00",
-    link: "community"
+    path: "/communities",
   },
   {
     image: "/icons/game-chat.png",
     text: "Mini Games",
     timer: "00:00",
-    link: "games"
+    path: "",
   },
 ];
 
@@ -157,20 +158,12 @@ export default function Homepage() {
             borderImageSlice: 1,
           }}
         >
-          {/* <Box
-            bg={
-              "linear-gradient(90deg, #B5CFFE 10%,  #4979D1 5%, #4979D1 12%, #B5CFFE 20%, #4979D1 22%, #B5CFFE 25%, #B5CFFE 10%,  #4979D1 5%, #4979D1 25%, #B5CFFE 27%, #4979D1 22%, #B5CFFE 35%, #B5CFFE 50%,  #4979D1 55%, #4979D1 60%, #B5CFFE 65%, #4979D1 78%, #B5CFFE 85%, #4979D1 100%)"
-            }
-            width={"100%"}
-            h={"10px"}
-            borderTopRadius={"100px"}
-          /> */}
-
           <Flex w={"100%"} p={"8px 12px"} gap={"4px"}>
             {SmallCardArray.map((card) => {
               return (
+                <Link to={card.path} className="w-[25%]">
                 <Flex
-                  width={"25%"}
+                  width={"100%"}
                   flexDirection={"column"}
                   alignItems={"center"}
                   height={"125px"}
@@ -205,6 +198,7 @@ export default function Homepage() {
                     {card.timer}
                   </Text>
                 </Flex>
+                </Link>
               );
             })}
           </Flex>
