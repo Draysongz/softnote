@@ -58,6 +58,8 @@ function App() {
   if(!firstName && !lastName){
     return <Loading />;
   }
+
+  console.log(firstName)
   return (
     
         <Routes>
