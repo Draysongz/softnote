@@ -59,7 +59,7 @@ function App() {
     return <Loading />;
   }
 
-  console.log(firstNamedd)
+  console.log(firstName)
   return (
     
         <Routes>
