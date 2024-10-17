@@ -66,7 +66,7 @@ function App() {
     // Set timeout to change loading state after 15 seconds (15000ms)
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 15000); // 15 seconds
+    }, 5000); // 15 seconds
 
     // Clean up the timer if the component unmounts before 15 seconds
     return () => clearTimeout(timer);
