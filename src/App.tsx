@@ -9,6 +9,12 @@ import DailyReward from "../Pages/DailyReward";
 import Friends from "./pages/Friends";
 import Achievements from "./pages/Achievements";
 import Community from "./pages/Community";
+import Upgrades from "./pages/Upgrade";
+import Play2Earn from "./pages/Play2Earn";
+import Trivia from "./pages/Trivia";
+import Roulette from "./pages/Roulette";
+import Jigsaw from "./pages/JigSaw";
+import Badges from "./pages/Badges";
 
 function App() {
   return (
@@ -22,8 +28,14 @@ function App() {
           <Route path="/loading" element={<Loading />} />
           <Route path="/daily" element={<DailyReward />} />
           <Route path="/referral" element={<Friends />} />
+          <Route path="/games" element={<Play2Earn />}/>
+          <Route path="/trivia" element={<Trivia />}/>
+          <Route path="/roulette" element={<Roulette />}/>
+          <Route path="/jigsaw" element={<Jigsaw />} />
           <Route path="/achievement" element={<Achievements />} />
+          <Route path="/badges" element={<Badges />} />
           <Route path="/communities" element={<Community />}/>
+          <Route path="/powerUps" element={<Upgrades />}/>
         </Routes>
       </Router>
     </Box>

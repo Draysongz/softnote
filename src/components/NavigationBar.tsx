@@ -51,7 +51,12 @@ const NavItem: React.FC<NavItemProps> = ({
 
 const NavigationBar: React.FC = () => {
   const location = useLocation();
-  const isCommunityActive = location.pathname.startsWith('/communities')
+  const isGameActive = location.pathname.startsWith('/games');
+  const isTriviaActive = location.pathname.startsWith('/trivia');
+  const isRouletteActive = location.pathname.startsWith('/roulette');
+  const isJigsawActive = location.pathname.startsWith('/jigsaw');
+  const isCommunityActive = location.pathname.startsWith('/communities');
+   const isBadgeActive = location.pathname.startsWith('/badges');
   const isDailyActive = location.pathname.startsWith('/dailytask');
   const isSocialActive = location.pathname.startsWith('/socials');
   return (
@@ -78,7 +83,7 @@ const NavigationBar: React.FC = () => {
               />
             </svg>
           }
-          isActive={ isCommunityActive || location.pathname === "/"}
+          isActive={ isGameActive || isTriviaActive || isRouletteActive || isJigsawActive || isCommunityActive || location.pathname === "/"}
           label="Start The Rush"
           to="/"
         />
@@ -106,8 +111,8 @@ const NavigationBar: React.FC = () => {
             </svg>
           }
           label="Power Up"
-          isActive={location.pathname === "/boost"}
-          to="/boost"
+          isActive={location.pathname === "/powerUps"}
+          to="/powerUps"
         />
         <NavItem
           icon={
@@ -202,7 +207,7 @@ const NavigationBar: React.FC = () => {
             </svg>
           }
           label="Achievement & Badges"
-          isActive={location.pathname === "/achievement"}
+          isActive={isBadgeActive || location.pathname === "/achievement"}
           to="/achievement"
         />
       </div>

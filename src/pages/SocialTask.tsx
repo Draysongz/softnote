@@ -140,13 +140,14 @@ export default function SocialTask() {
             alignItems={'center'}>
                 <Flex alignItems={'center'} gap={4}>
                 
-                <Box w={'88px'} height={'88px'} bg={'#293042'} display={'flex'} flexDirection={'column'} borderRadius={'10px'} gap={'5px'} justifyContent={'center'} alignItems={'center'} py={'10px'}>
+                <Box w={'88px'} height={'88px'} bg={'#293042'} display={'flex'} flexDirection={'column'} borderRadius={'10px'} gap={'5px'} justifyContent={'center'} alignItems={'center'} py={'10px'}
+                boxShadow={'0px -2px 8px 0px #F8F9FD33 inset'} >
                     <Image src={social.image} w={'28px'}/>
                     <Text width={'72px'} height={'34px'} fontSize={'14px'} fontWeight={500} textAlign={'center'} lineHeight={'16.94px'}>
                         {social.task}
                     </Text>
                 </Box>
-                <Flex direction={'column'}>
+                <Flex direction={'column'} w={'58%'}>
                 <Text fontSize={'14px'} fontWeight={600} color={'#f5f5f5'}>
                     {social.name}
                 </Text>

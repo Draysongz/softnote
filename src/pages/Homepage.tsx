@@ -23,7 +23,7 @@ const SmallCardArray = [
     image: "/icons/mint.png",
     text: "Upgrade & Rush",
     timer: "00:00",
-    path: "",
+    path: "/powerUps",
   },
   {
     image: "/icons/people-add.png",
@@ -35,7 +35,7 @@ const SmallCardArray = [
     image: "/icons/game-chat.png",
     text: "Mini Games",
     timer: "00:00",
-    path: "",
+    path: "/games",
   },
 ];
 

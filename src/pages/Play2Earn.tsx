@@ -6,17 +6,17 @@ const PlayList = [
     {
         image: "/icons/Puzzle.png",
         name: "SoftNote Bill Jigsaw",
-        path: "/",
+        path: "/jigsaw",
     },
     {
         image: "/icons/Roulette.png",
         name: "Resource Roulette",
-        path: "",
+        path: "/roulette",
     },
     {
         image: "/icons/Heart-Puzzle.png",
         name: "Crypto Trivia",
-        path: "",
+        path: "/trivia",
     },
     {
         image: "/icons/Finish-Flag.png",

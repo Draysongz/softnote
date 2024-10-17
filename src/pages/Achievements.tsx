@@ -8,6 +8,7 @@ import {
   WrapItem,
   Avatar,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar";
 
 type Props = {};
@@ -40,11 +41,13 @@ function Achievements({}: Props) {
                 <Flex alignItems={"center"} gap={2}>
                   <Wrap border={"1px solid white"} borderRadius={"15px"}>
                     <WrapItem>
+                      <Link to={'/badges'}>
                       <Avatar
                         size="sm"
                         name="Prosper Otemuyiwa"
                         src="https://bit.ly/prosper-baba"
                       />
+                      </Link>
                     </WrapItem>
                   </Wrap>
                   <Flex direction={"column"} lineHeight={"14px"}>
