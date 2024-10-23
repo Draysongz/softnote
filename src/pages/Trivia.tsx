@@ -1,51 +1,34 @@
 import { useState } from "react";
-import {
-  Box,
-  Flex,
-  Image,
-  Text,
-  Radio,
-  RadioGroup,
-  Stack,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import NavigationBar from "../components/NavigationBar";
 
 export default function Trivia() {
-    const Option = [
-        {
-            name: "Ethereum",
-            image: "/icons/MoneyBag.png",
-            value: "1"
-        },
-        {
-            name: "Energy",
-            image: "/icons/Lightning.png",
-            value: "2"
-        },
-        {
-            name: "Ethernet",
-            image: "/icons/Vector.png",
-            value: "3"
-        },
-        {
-            name: "Envelope",
-            image: "/icons/Envelope.png",
-            value: "4"
-        },
-    ]
+  const Option = [
+    {
+      name: "Ethereum",
+      value: "1",
+    },
+    {
+      name: "Energy",
+      value: "2",
+    },
+    {
+      name: "Ethernet",
+      value: "3",
+    },
+    {
+      name: "Envelope",
+      value: "4",
+    },
+  ];
 
-  const [selectedValue, setSelectedValue] = useState(""); // For tracking the selected radio button
+  const [selectedValue, setSelectedValue] = useState(""); // For tracking the selected button
 
   return (
     <Box
       display={"flex"}
       flexDirection={"column"}
-      bgColor={"#12161F"}
-      bgImage={"./background.png"}
-      bgRepeat={"no-repeat"}
-      bgSize={"auto"}
-      bgPos={"center"}
+      bgGradient={"linear-gradient(360deg, #00283A 0%, #12161E 88.17%)"}
       width={"100vw"}
       minHeight={"100vh"}
       alignItems={"center"}
@@ -62,84 +45,91 @@ export default function Trivia() {
         gap={5}
         pb={32}
       >
-        <Text color={"#fff"} fontWeight={"700"} fontSize={"24px"}>
+        <Text color={"#93BAFF"} fontWeight={"700"} fontSize={"24px"}>
           Crypto Trivia
         </Text>
-        
-        <Box width={"100%"} display={"flex"} flexDirection={"column"} gap={4}>
+
+        <Box
+          width={"100%"}
+          display={"flex"}
+          flexDirection={"column"}
+          gap={4}
+          mt={10}
+        >
           <Text
             width={"100%"}
-            h={"70px"}
+            px={10}
             textAlign={"center"}
-            boxShadow={"0px -2px 8px 0px #F8F9FD33 inset"}
-            bg={"#293042"}
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            fontSize={"24px"}
+            fontSize={"35px"}
+            lineHeight={"42.36px"}
             fontWeight={700}
-            borderRadius={"50px"}
-            sx={{
-              WebkitTextStroke: "1px black",
-              textStroke: "1px black",
-            }}
           >
             What does ETH stand for?
           </Text>
 
-          <RadioGroup
-            value={selectedValue}
-            onChange={setSelectedValue}
-            py={"15px"}
-            mt={5}
-          >
-            <Stack spacing={5} direction="column" w={"90%"} mx={"auto"}>
-              {Option.map((option) => {
-                return(
-              <Flex
-                justifyContent={"space-between"}
-                alignItems={"center"}
-                w={"100%"}
-                h={"58px"}
+          <Box py={"15px"} mt={5} w={"90%"} mx={"auto"}>
+            {Option.map((option) => (
+              <Box
+                p={"2px"}
+                bgGradient={
+                  "conic-gradient(from 180deg at 50% 50%, #19388A 0deg, #1A59FF 25.2deg, #D9D9D9 117deg, #1948C1 212.4deg, #F5F5F5 284.4deg, #19388A 360deg)"
+                }
+                borderRadius={"10px"}
+                mb={3}
               >
-                <Flex w={'50%'} alignItems={'center'} gap={4}>
-                <Image src={option.image} w={'38px'}/>
-                <Text color={"white"} fontWeight={600} fontSize={'20px'}>
+                <Button
+                  key={option.value}
+                  onClick={() => setSelectedValue(option.value)}
+                  bg={selectedValue === option.value ? 'linear-gradient(90deg, #4979D1 0%, #4979D1 52.17%, #ADC9FE 100%)' : "#293042"}
+                  color="white"
+                  _hover={{ bg: 'linear-gradient(90deg, #4979D1 0%, #4979D1 52.17%, #ADC9FE 100%)' }}
+                  _focus={{ bg: 'linear-gradient(90deg, #4979D1 0%, #4979D1 52.17%, #ADC9FE 100%)' }}
+                  w={"100%"}
+                  h={"69px"}
+                  display={"flex"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  px={4}
+                  borderRadius={"10px"}
+                  fontSize={"25px"}
+                  fontWeight={600}
+                >
                   {option.name}
-                </Text>
-                </Flex>
-                <Radio
-                  colorScheme="blue"
-                  value={option.value}
-                  _checked={{ bg: "#4979D1", borderColor: "#4979D1" }}
-                />
-              </Flex>
-                )
-              })}
+                </Button>
+              </Box>
+            ))}
+          </Box>
 
-            </Stack>
-          </RadioGroup>
-          
           {/* Submit button */}
-          <Button
-          w={'90%'}
-          h={'49px'}
-          mx={"auto"}
-          fontSize={'24px'}
-          color={'#f5f5f5'}
-          fontWeight={700}
-          borderRadius={'20px'}
-          boxShadow = {'0px -2px 8px 0px #F8F9FD33 inset'}
-          bg={'#4979D1'}
-
-
-            colorScheme="blue"
-            isDisabled={!selectedValue}
-            _disabled={{bg:"#293042"}} // Disabled until a radio button is selected
-            mt={4}
+          <Box
+            p={"2px"}
+            bgGradient={
+              "conic-gradient(from 180deg at 50% 50%, #19388A 0deg, #1A59FF 25.2deg, #D9D9D9 117deg, #1948C1 212.4deg, #F5F5F5 284.4deg, #19388A 360deg)"
+            }
+            borderRadius={"20px"}
+            mx={'auto'}
+            w={'80%'}
           >
-            Let's Go
-          </Button>
+            <Button
+              w={"100%"}
+              h={"49px"}
+              mx={"auto"}
+              fontSize={"24px"}
+              color={"#f5f5f5"}
+              fontWeight={700}
+              borderRadius={"20px"}
+              boxShadow={"0px -2px 8px 0px #F8F9FD33 inset"}
+              bg={"#4979D1"}
+              isDisabled={!selectedValue}
+              _disabled={{ bg: "#293042" }} // Disabled until an option is selected
+              
+            >
+              Let's Go
+            </Button>
+          </Box>
         </Box>
       </Flex>
 

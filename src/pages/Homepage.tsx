@@ -14,24 +14,6 @@ import NavigationBar from "../components/NavigationBar";
 
 const SmallCardArray = [
   {
-    image: "/icons/reward.png",
-    text: "Daily Reward",
-    timer: "00:00",
-    path: "/daily",
-  },
-  {
-    image: "/icons/mint.png",
-    text: "Upgrade & Rush",
-    timer: "00:00",
-    path: "/powerUps",
-  },
-  {
-    image: "/icons/people-add.png",
-    text: "SoftNote Community",
-    timer: "00:00",
-    path: "/communities",
-  },
-  {
     image: "/icons/game-chat.png",
     text: "Mini Games",
     timer: "00:00",
@@ -44,11 +26,7 @@ export default function Homepage({lastName, firstName}: {lastName: string, first
     <Box
       display={"flex"}
       flexDirection={"column"}
-      bgColor={"#12161F"}
-      bgImage={"./background.png"}
-      bgRepeat={"no-repeat"}
-      bgSize={"auto"}
-      bgPos={"center"}
+      bgColor={"#12161E"}
       width={"100vw"}
       minHeight={"100vh"}
       alignItems={"center"}
@@ -147,38 +125,28 @@ export default function Homepage({lastName, firstName}: {lastName: string, first
         <Flex
           width={"100%"}
           flexDirection={"column"}
-          borderTopWidth={"6px"}
-          borderStyle={"solid"}
-          borderRadius={"7.5px"}
+          pt={1}
+          borderTopRadius={"10px"}
           justifyContent={"center"}
           alignItems={"center"}
-          sx={{
-            borderImageSource:
-              "conic-gradient(from 180deg at 50% 50%, #19388A 0deg, #1A59FF 25.2deg, #D9D9D9 117deg, #1948C1 212.4deg, #F5F5F5 284.4deg, #19388A 360deg)",
-            borderImageSlice: 1,
-          }}
-        >
-          <Flex w={"100%"} p={"8px 12px"} gap={"4px"}>
+          bgGradient={'conic-gradient(from 180deg at 50% 50%, #19388A 0deg, #1A59FF 25.2deg, #D9D9D9 117deg, #1948C1 212.4deg, #F5F5F5 284.4deg, #19388A 360deg)'
+          }
+        > 
+          <Flex flexDirection={'column'} bgGradient={'linear-gradient(360deg, #00283A 0%, #12161E 88.17%)'} w={'100%'} borderTopRadius={'15px'} h={'80vh'} pt={{base: 2, sm: 5}} alignItems={'center'} gap={{base:3, sm:3}}>
+          <Flex w={"80%"} p={"3px"} gap={"4px"} bg={'red'} borderRadius={'10px'} mx={'auto'} bgGradient={'conic-gradient(from 180deg at 50% 50%, #19388A 0deg, #1A59FF 25.2deg, #D9D9D9 117deg, #1948C1 212.4deg, #F5F5F5 284.4deg, #19388A 360deg)'}>
             {SmallCardArray.map((card) => {
               return (
-                <Link to={card.path} className="w-[25%]">
+                <Link to={card.path} className="w-[100%]" >
                 <Flex
                   width={"100%"}
                   flexDirection={"column"}
                   alignItems={"center"}
-                  height={"125px"}
+                  height={"100px"}
                   justifyContent={"center"}
                   p={"22px"}
-                  bgColor={"#1D222EB2"}
+                  bgColor={"#1D222E"}
                   gap={"8px"}
-                  borderWidth={"1.33px"}
-                  borderStyle={"solid"}
-                  borderRadius={"7.5px"}
-                  sx={{
-                    borderImageSource:
-                      "conic-gradient(from 180deg at 50% 50%, #19388A 0deg, #1A59FF 25.2deg, #D9D9D9 117deg, #1948C1 212.4deg, #F5F5F5 284.4deg, #19388A 360deg)",
-                    borderImageSlice: 1,
-                  }}
+                  borderRadius={'10px'}
                 >
                   <Image src={card.image} w={"32px"} />
                   <Text
@@ -251,30 +219,31 @@ export default function Homepage({lastName, firstName}: {lastName: string, first
               flexDirection={'column'}
               justifyContent={'center'}
               alignItems={'center'}
-              overflow={'hidden'}
+              // overflow={'hidden'}
               mt={{base: 2, sm: 5}}
 
             >
-                <Image src="/Coins.png" position={'relative'} zIndex={1} w={{base:'60%', sm: "100%"}}/>
+                <Image src="/FloatingCoins.png" position={'relative'} zIndex={1} w={{base:'60%', sm: "90%"}}/>
                 <Image src="/Mascot.png" zIndex={0} position={'absolute'} w={{base:'50%', sm: "auto"}}/>
             </Box>
           </Box>
 
           <Box w={'100%'} h={'35.33px'} mt={{base: 2, sm:5}} px={'10.67px'} alignItems={'center'} justifyContent={'center'} display={'flex'}>
             <Flex width={'85%'} alignItems={'center'} justifyContent={'space-between'}>
-            <Text fontSize={'13px'} fontWeight={500} color={'#4979D1'}>
+            <Text fontSize={'13px'} fontWeight={500} color={'#DDE2E7'}>
                 125,000 / 125,000
             </Text>
 
-            <Flex p={'6.67px'} gap={3}
+            <Flex p={'6.67px'} gap={2}
             width={'103.33px'} height={'35.53px'} alignItems={'center'}>
-                <Image src="/icons/booster.png"/>
-                <Text fontSize={'13px'} fontWeight={500} color={'#4979D1'}>
+                <Image src="/icons/whiteBooster.png"/>
+                <Text fontSize={'13px'} fontWeight={500} color={'#DDE2E7'}>
                     Explore
                 </Text>
             </Flex>
             </Flex>
           </Box>
+          </Flex>
         </Flex>
       </Flex>
       <NavigationBar />

@@ -1,205 +1,238 @@
-
 import {
-  Flex,
   Box,
   Text,
-  HStack,
-  Progress,
-  Heading,
-  Button,
-  Card,
-  CardBody,
+  Flex,
   Image,
+  Icon,
+  Progress,
+  useClipboard,
+  Input,
+  Button,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { CheckIcon } from "@chakra-ui/icons";
+import { FaShareAlt } from "react-icons/fa";
+import { MdContentCopy } from "react-icons/md";
 import NavigationBar from "../components/NavigationBar";
 
-type Props = {}
 
-function Friends({}: Props) {
+export default function Friends() {
+  const placeholder = "http://example.com/aBcD1234EfGh5678IjKlMnOpQrStUvWxYz9876";
+const { onCopy, value, setValue, hasCopied } = useClipboard("http://example.com/aBcD1234EfGh5678IjKlMnOpQrStUvWxYz9876");
+
   return (
-    <Flex
-      minH={"100vh"}
-      bgImage={"/bgImage.png"}
-      bgColor={"#12161F"}
-      minW={"100vw"}
-      bgSize={"auto"}
-      color={"white"}
-      direction={"column"}
-      bgRepeat={"no-repeat"}
-      gap={1}
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      bgGradient={"linear-gradient(360deg, #00283A 0%, #12161E 88.17%)"}
+      width={"100vw"}
+      minHeight={"100vh"}
+      alignItems={"center"}
+      textColor={"white"}
+      overflow={"hidden"}
     >
-      <Flex direction={"column"} gap={2} p={5}>
-        <Flex gap={1} justifyContent={"center"}>
-          <Heading fontSize={"24px"}>Invite & Earn</Heading>
-        </Flex>
-
-        <Flex justifyContent={"space-between"} alignItems={"center"}>
-          <Flex direction={"column"}>
-            <HStack spacing={10}>
-              <Text fontSize={"small"}>
-                Ambassador
-                <ChevronRightIcon />
-              </Text>
-              <Text fontSize={"small"}>1/4</Text>
-            </HStack>
-
-            <Flex alignItems={"center"} borderRadius={"20px"} mt={2}>
-              <Progress
-                value={20}
-                size="sm"
-                borderRadius={"full"}
-                bg={"#1D222E"}
-                border={"1px solid #7585A7"}
-                w={"full"}
-                sx={{
-                  "& > div": {
-                    background:
-                      "linear-gradient(90deg, #4979D1 0%, #4979D1 48.17%, #B5CFFE 100%)",
-                  },
-                }}
-              />
-            </Flex>
-          </Flex>
-
-          <Flex direction={"column"}>
-            <Text fontSize={"xs"} textAlign={"center"}>
-              XP Reward
-            </Text>
+      <Flex
+        width={"100%"}
+        minHeight={"100vh"}
+        flexDirection={"column"}
+        alignItems={"center"}
+        pb={32}
+        gap={5}
+      >
+        <Box width={"100%"} p={"20px"} pt={"30px"}>
+          <Text
+            color={"#93BAFF"}
+            fontWeight={"700"}
+            fontSize={"24px"}
+            textAlign={"center"}
+          >
+            Invite & Earn
+          </Text>
+          <Flex
+            w={"100%"}
+            alignItems={"center"}
+            mt={4}
+            justifyContent={"space-between"}
+          >
             <Box
-              border={"1px solid white"}
-              p={1}
-              borderRadius={"20px"}
-              w={"27vw"}
-              h={"4vh"}
+              width={"40%"}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={1}
             >
-              <Text textAlign={"center"} fontSize={"xs"}>
-                400,035
+              <Flex justifyContent={"space-between"}>
+                <Text fontSize={"12px"} color={"#F5F5F5"}>
+                  Ambassador
+                  <Icon as={ChevronRightIcon} />
+                </Text>
+                <Text fontSize={"12px"} color={"#F5F5F5"}>
+                  2/4
+                </Text>
+              </Flex>
+              <Flex alignItems={"center"} bg={"green"}>
+                <Progress
+                  value={80}
+                  size="sm"
+                  borderRadius={"full"}
+                  bg={"#1D222E"}
+                  border={"1px solid #7585A7"}
+                  w={"full"}
+                  sx={{
+                    "& > div": {
+                      background:
+                        "linear-gradient(90deg, #4979D1 0%, #4979D1 48.17%, #B5CFFE 100%)",
+                    },
+                  }}
+                />
+              </Flex>
+            </Box>
+            <Box
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Text fontWeight={500} fontSize={"12px"} color={"#f5f5f5"}>
+                XP Reward
               </Text>
+              <Box
+                width={"80px"}
+                height={"21px"}
+                padding={"2px 12px"}
+                border={"1px solid #f5f5f5"}
+                borderRadius={"10px"}
+                fontWeight={"600"}
+                fontSize={"14px"}
+                color={"#f5f5f5"}
+                textAlign={"center"}
+                alignItems={"center"}
+                display={"flex"}
+                flexDirection={"column"}
+                justifyContent={"center"}
+              >
+                <Text>400,345</Text>
+              </Box>
             </Box>
           </Flex>
-        </Flex>
-      </Flex>
+        </Box>
 
-      <Flex p={5} direction={"column"}>
-        <Card
-          bg={"transparent"}
-          borderTop={"1px solid white"}
-          borderRadius={"10px"}
-          w={"full"}
+        <Box
+          width={"100%"}
+          px={"16px"}
+          display={"flex"}
+          flexDirection={"column"}
+          gap={5}
         >
-          <CardBody>
-            <Flex alignItems={"center"} gap={3}>
-              <Flex
-                direction={"column"}
-                justifyContent={"center"}
-                align={"center"}
-                bg={"#293042"}
-                w={"20vw"}
-                h={"10vh"}
-                ml={"-10%"}
-                mt={"-7%"}
+          <Text
+            fontSize={"25px"}
+            w={"251px"}
+            fontWeight={600}
+            color={"#fff"}
+            textAlign={"center"}
+            mx={"auto"}
+          >
+            Invite <span className="text-[#93BAFF]"> your friends</span> & Earn{" "}
+            <span className="text-[#93BAFF]">cool rewards</span>
+          </Text>
+
+          <Image src="/yellow-dude.png" w={"344px"} h={"295px"} mx={"auto"} />
+
+          <Flex
+          w={'90%'}
+          borderRadius={'10px'}
+          mx={'auto'}
+          bgGradient={
+            "conic-gradient(from 180deg at 50% 50%, #19388A 0deg, #1A59FF 25.2deg, #D9D9D9 117deg, #1948C1 212.4deg, #F5F5F5 284.4deg, #19388A 360deg)"
+          }
+          p={'2px'}
+          alignItems={'center'}
+          >
+
+            <Box display={'flex'} w={'100%'} h={'100%'} bg={"#1d222e"} borderRadius={"10px"} alignItems={'center'}>
+            <Input
+              placeholder={placeholder}
+              value={value}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
+              mr={2}
+              alignSelf={'center'}
+              height={"41px"}
+              outline="none"
+              boxShadow="none"
+              _focus={{ boxShadow: "none" }}
+              border="none"
+              color="white"
+              fontSize="10px"
+              _placeholder={{ color: "white", fontSize: "10px" }}
+              alignItems={'center'}
+            />
+            <Button
+              w={'41px'}
+              height={"41px"}
+              onClick={onCopy}
+              bg={"#4979d1"}
+              borderRadius={'0px'}
+              mr={'0.5'}
+              _hover={{ bg: "#4979d1", border: "none", outline: "none" }}
+            >
+              {hasCopied ? (
+                <CheckIcon boxSize={5} color={'white'}/>
+              ) : (
+                <Icon as={MdContentCopy} boxSize={5} color={'white'}/>
+              )}{" "}
+              {/* Switches between icons */}
+            </Button>
+            <Button
+              w={'41px'}
+              height={"41px"}
+              onClick={onCopy}
+              bg={"#4979d1"}
+              borderRadius={'0px 10px 10px 0px'}
+              _hover={{ bg: "#4979d1", border: "none", outline: "none" }}
+            >
+                <Icon as={FaShareAlt} boxSize={5} color={'white'}/>
+              {/* Switches between icons */}
+            </Button>
+            
+            </Box>
+          </Flex>
+
+          <Flex flexDirection={"column"} gap={4} w={"90%"} mx={"auto"}>
+            <Text fontSize={"12px"} fontWeight={500}>
+              Friend List
+            </Text>
+            <Box
+              bgGradient={
+                "conic-gradient(from 180deg at 50% 50%, #19388A 0deg, #1A59FF 25.2deg, #D9D9D9 117deg, #1948C1 212.4deg, #F5F5F5 284.4deg, #19388A 360deg)"
+              }
+              borderRadius={"10px"}
+              h={"67px"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              p={"2px"}
+            >
+              <Box
+                width={"100%"}
+                h={"100%"}
+                bg={"#1d222e"}
                 borderRadius={"10px"}
-              >
-                <Image src="/friends.png" />
-                <Text fontSize={"sm"} color={"white"}>
-                  Invite
-                </Text>
-              </Flex>
-
-              <Box mt={"-7%"}>
-                <Heading fontSize={"sm"} color={"white"}>
-                  INVITE & EARN
-                </Heading>
-                <Text color={"white"} fontSize={"small"}>
-                  Invite a Friend to Earn
-                </Text>
-                <Text textAlign={"left"} color={"#4979D1"} fontSize={"xs"}>
-                  120 XP
-                </Text>
-              </Box>
-            </Flex>
-          </CardBody>
-        </Card>
-
-        <Card
-          bg={"transparent"}
-          borderTop={"1px solid white"}
-          borderRadius={"10px"}
-          w={"full"}
-        >
-          <CardBody>
-            <Flex alignItems={"center"} gap={3}>
-              <Flex
-                direction={"column"}
+                fontSize={"14px"}
+                fontWeight={500}
+                display={"flex"}
+                mx={"auto"}
                 justifyContent={"center"}
                 alignItems={"center"}
-                bg={"#293042"}
-                w={"27vw"}
-                h={"10vh"}
-                ml={"-10%"}
-                mt={"-10%"}
-                borderRadius={"10px"}
+                color={"#f2f2f2"}
               >
-                <Image src="/friends.png" />
-                <Text fontSize={"sm"} color={"white"}>
-                  Invite
-                </Text>
-              </Flex>
-
-              <Box mt={"-6%"}>
-                <Heading fontSize={"sm"} color={"white"}>
-                  INVITE A FRIEND WITH TELEGRAM PREMIUM
-                </Heading>
-                <Text color={"white"} fontSize={"small"}>
-                  Invite a Friend to Earn
-                </Text>
-                <Text textAlign={"left"} color={"#4979D1"} fontSize={"xs"}>
-                  1000 XP
-                </Text>
+                You haven’t invited anyone yet
               </Box>
-            </Flex>
-          </CardBody>
-        </Card>
-      </Flex>
-
-      <Flex direction={"column"} p={5} mt={"-7%"} gap={3}>
-        <Flex alignItems={"center"} justifyContent={"space-between"}>
-          <Text>List of your friends</Text>
-          <Box background={"#D9D9D9"} h={"3.5vh"} w={"6vw"} rounded={"full"} />
-        </Flex>
-        <Flex
-          w={"full"}
-          background={"#B2B4B480"}
-          h={"10vh"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          borderRadius={"10px"}
-        >
-          <Text color={"white"}>You haven&apos;t invited anyone yet</Text>
-        </Flex>
-        <Flex justifyContent={"space-between"}>
-          <Button
-            bgColor={"#4979D1"}
-            borderRadius={"10px"}
-            color={"white"}
-            w={"55vw"}
-          >
-            Invite a friend
-          </Button>
-          <Button
-            bgColor={"#4979D1"}
-            borderRadius={"10px"}
-            color={"white"}
-            w={"25vw"}
-          >
-            COPY
-          </Button>
-        </Flex>
+            </Box>
+          </Flex>
+        </Box>
       </Flex>
       <NavigationBar />
-    </Flex>
+    </Box>
   );
 }
-
-export default Friends

@@ -18,6 +18,7 @@ import Badges from "./pages/Badges";
 import { useEffect, useState } from "react";
 import WebApp from "@twa-dev/sdk";
 import { useLocation } from "react-router-dom";
+import Puzzle from "./pages/Puzzle";
 
 function BackButtonHandler() {
   const location = useLocation(); // Use React Router's useLocation to track route changes
@@ -91,6 +92,7 @@ function App() {
           <Route path="/trivia" element={<Trivia />}/>
           <Route path="/roulette" element={<Roulette />}/>
           <Route path="/jigsaw" element={<Jigsaw />} />
+          <Route path="/puzzle" element={<Puzzle/>} />
           <Route path="/achievement" element={<Achievements />} />
           <Route path="/badges" element={<Badges />} />
           <Route path="/communities" element={<Community />}/>

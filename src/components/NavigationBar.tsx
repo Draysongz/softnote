@@ -18,13 +18,11 @@ const NavItem: React.FC<NavItemProps> = ({
   <Link to={to}>
     <Box
       borderRadius={"10px"}
-      w={{base: "72px" ,sm:"76px"}}
+      w={{ base: "72px", sm: "76px" }}
       height={"80px"}
       p={"6px 16px"}
       textAlign={"center"}
       gap={"8px"}
-      display={"flex"}
-      flexDirection={"column"}
       alignItems={"center"}
       justifyContent={"center"}
       className={`flex flex-col ${
@@ -33,15 +31,11 @@ const NavItem: React.FC<NavItemProps> = ({
     >
       {icon}
       <Text
-        fontSize={{ base:'9px' ,sm:"10.67px"}}
-        // w={"48px"}
-        h={"26px"}
+        fontSize={{ base: "9px", sm: "10.67px" }}
         fontWeight={500}
         textAlign={"center"}
-        lineHeight={'12.91px'}
-        width={ label === 'Power Up'  ? "35px" : ""}
-        
-
+        lineHeight={"12.91px"}
+        width={label === "Power Up" ? "35px" : ""}
       >
         {label}
       </Text>
@@ -51,14 +45,16 @@ const NavItem: React.FC<NavItemProps> = ({
 
 const NavigationBar: React.FC = () => {
   const location = useLocation();
-  const isGameActive = location.pathname.startsWith('/games');
-  const isTriviaActive = location.pathname.startsWith('/trivia');
-  const isRouletteActive = location.pathname.startsWith('/roulette');
-  const isJigsawActive = location.pathname.startsWith('/jigsaw');
-  const isCommunityActive = location.pathname.startsWith('/communities');
-   const isBadgeActive = location.pathname.startsWith('/badges');
-  const isDailyActive = location.pathname.startsWith('/dailytask');
-  const isSocialActive = location.pathname.startsWith('/socials');
+  const isGameActive = location.pathname.startsWith("/games");
+  const isTriviaActive = location.pathname.startsWith("/trivia");
+  const isRouletteActive = location.pathname.startsWith("/roulette");
+  const isJigsawActive = location.pathname.startsWith("/jigsaw");
+  const isCommunityActive = location.pathname.startsWith("/communities");
+  const isBadgeActive = location.pathname.startsWith("/badges");
+  const isDailyActive = location.pathname.startsWith("/dailytask");
+  const isSocialActive = location.pathname.startsWith("/socials");
+  const isDailyRewardActive = location.pathname.startsWith("/daily");
+  const isPuzzleActive= location.pathname.startsWith('/puzzle');
   return (
     <nav className="fixed bottom-0  bg-[#12161E] w-[100vw] z-40 p-[5px]">
       <div className="flex justify-center items-center w-[100%] gap-1">
@@ -83,7 +79,13 @@ const NavigationBar: React.FC = () => {
               />
             </svg>
           }
-          isActive={ isGameActive || isTriviaActive || isRouletteActive || isJigsawActive || isCommunityActive || location.pathname === "/"}
+          isActive={
+            isGameActive ||
+            isTriviaActive ||
+            isRouletteActive ||
+            isJigsawActive ||
+            location.pathname === "/"
+          }
           label="Start The Rush"
           to="/"
         />
@@ -138,7 +140,11 @@ const NavigationBar: React.FC = () => {
             </svg>
           }
           label="Daily Challenge"
-          isActive={ isDailyActive || isSocialActive || location.pathname === "/challenges"}
+          isActive={
+            isDailyActive || isDailyRewardActive ||
+            isSocialActive || isCommunityActive || isPuzzleActive ||
+            location.pathname === "/challenges"
+          }
           to="/challenges"
         />
 
@@ -177,36 +183,26 @@ const NavigationBar: React.FC = () => {
           icon={
             <svg
               width="24"
-              height="23"
-              viewBox="0 0 24 23"
+              height="20"
+              viewBox="0 0 24 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M12.0002 16.3889C10.4196 16.3889 9.0438 17.5836 8.33354 19.3461C7.99429 20.1879 8.48109 21.1111 9.12792 21.1111H14.8724C15.5193 21.1111 16.0061 20.1879 15.6668 19.3461C14.9566 17.5836 13.5808 16.3889 12.0002 16.3889Z"
+                d="M0.73571 10.6667H5.62139C5.65523 10.6667 5.68494 10.6799 5.70469 10.6991C5.72396 10.7178 5.7321 10.7402 5.7321 10.7604V19.1666H0.625V10.7604C0.625 10.7402 0.633141 10.7178 0.652412 10.6991C0.672162 10.6799 0.701874 10.6667 0.73571 10.6667Z"
                 stroke="currentColor"
-                stroke-linecap="round"
               />
               <path
-                d="M18.1388 5.05554H19.2742C20.4084 5.05554 20.9755 5.05554 21.2714 5.41194C21.5672 5.76833 21.4442 6.30328 21.1982 7.37316L20.8291 8.97789C20.2741 11.3914 18.2436 13.1861 15.7777 13.5555"
+                d="M9.557 1.16672H14.4427C14.4765 1.16672 14.5062 1.17992 14.526 1.19912L14.8715 0.843744L14.526 1.19912C14.5453 1.21785 14.5534 1.24022 14.5534 1.26046V19.1666H9.44629V1.26046C9.44629 1.24022 9.45443 1.21785 9.4737 1.19912C9.49345 1.17992 9.52316 1.16672 9.557 1.16672Z"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               />
               <path
-                d="M5.8611 5.05554H4.72568C3.59152 5.05554 3.02445 5.05554 2.7286 5.41194C2.43276 5.76833 2.55577 6.30328 2.80181 7.37316L3.17083 8.97789C3.72584 11.3914 5.75638 13.1861 8.22221 13.5555"
+                d="M18.3785 5.91669H23.2642C23.2981 5.91669 23.3278 5.92989 23.3475 5.94909L23.6961 5.59059L23.3475 5.94909C23.3668 5.96782 23.3749 5.99019 23.3749 6.01043V19.1666H18.2678V6.01043C18.2678 5.99019 18.276 5.96782 18.2952 5.94909C18.315 5.92989 18.3447 5.91669 18.3785 5.91669Z"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M12 16.3888C14.853 16.3888 17.2558 11.9857 17.978 5.99134C18.1778 4.33355 18.2777 3.50466 17.7486 2.86341C17.2196 2.22217 16.3655 2.22217 14.6571 2.22217H9.34285C7.63451 2.22217 6.78034 2.22217 6.2513 2.86341C5.72226 3.50466 5.82213 4.33355 6.02188 5.99134C6.74414 11.9857 9.14702 16.3888 12 16.3888Z"
-                stroke="currentColor"
-                stroke-linecap="round"
               />
             </svg>
           }
-          label="Achievement & Badges"
+          label="Leaderboard"
           isActive={isBadgeActive || location.pathname === "/achievement"}
           to="/achievement"
         />

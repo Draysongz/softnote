@@ -1,25 +1,40 @@
-import { Box, Button, Flex, Text, useToast, Icon, Progress } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
+import { Box, Flex, Text, Icon, Progress, Image, Button, useToast } from "@chakra-ui/react";
 import { useState } from "react";
-import { JigsawPuzzle } from "react-jigsaw-puzzle/lib";
-import "react-jigsaw-puzzle/lib/jigsaw-puzzle.css";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import NavigationBar from "../components/NavigationBar";
 
-export default function Jigsaw() {
-  const [isSolved, setIsSolved] = useState(false); // State to track if the puzzle is solved
+const Rectangle =[
+    {
+        image: "./Rectangle.png",
+    },
+    {
+        image: "./Rectangle.png",
+    },
+    {
+        image: "./Rectangle.png",
+    },
+    {
+        image: "./Rectangle.png",
+    },
+    {
+        image: "./Rectangle.png",
+    },
+    {
+        image: "./Rectangle.png",
+    },
+    {
+        image: "./Rectangle.png",
+    },
+    {
+        image: "./Rectangle.png",
+    },
+    {
+        image: "./Rectangle.png",
+    },
+]
+export default function Puzzle() {
+    const [isSolved, setIsSolved] = useState(false); // State to track if the puzzle is solved
   const toast = useToast(); // Chakra UI toast
-
-  const handleSolved = () => {
-    setIsSolved(true); // Set the puzzle as solved
-    toast({
-      title: "You completed the jigsaw!",
-      description: "Claim your reward.",
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-      position: "bottom",
-    });
-  };
 
   const handleClaimPoints = () => {
     toast({
@@ -33,17 +48,16 @@ export default function Jigsaw() {
     // Reset the puzzle state to restart the game
     setIsSolved(false);
   };
-
   return (
     <Box
-    display={"flex"}
-    flexDirection={"column"}
-    bgGradient={"linear-gradient(360deg, #00283A 0%, #12161E 88.17%)"}
-    width={"100vw"}
-    minHeight={"100vh"}
-    alignItems={"center"}
-    textColor={"white"}
-    overflow={"hidden"}
+      display={"flex"}
+      flexDirection={"column"}
+      bgGradient={"linear-gradient(360deg, #00283A 0%, #12161E 88.17%)"}
+      width={"100vw"}
+      minHeight={"100vh"}
+      alignItems={"center"}
+      textColor={"white"}
+      overflow={"hidden"}
     >
       <Flex
         width={"100%"}
@@ -52,17 +66,17 @@ export default function Jigsaw() {
         alignItems={"center"}
         justifyContent={"center"}
         pt={12}
-        gap={{ base: 5, sm: 14 }}
+        gap={{ base: 5, sm: 5 }}
         pb={32}
       >
-        <Box width={"100%"} px={"20px"}>
+        <Box width={"100%"} px={"20px"} pb={10}>
           <Text
             color={"#93BAFF"}
             fontWeight={"700"}
             fontSize={"24px"}
             textAlign={"center"}
           >
-            SoftNote Bill Jigsaw
+            Daily Puzzle
           </Text>
           <Flex
             w={"100%"}
@@ -131,28 +145,51 @@ export default function Jigsaw() {
             </Box>
           </Flex>
         </Box>
-
-        {/* Puzzle Container */}
-        <Box 
-          bgImage={"./jigsawImage.png"} 
-          bgPosition={'center'}
-          bgRepeat={'no-repeat'}
-          bgSize={'contain'}
-          w={"100%"}
-          p={4} 
-          maxW="600px"
-          mx="auto"
+         
+        <Flex width={'146px'} justifyContent={'space-between'}>
+            <Box w={'36px'}
+            h={'36px'}
+            bg={'#d9d9d9'}
+            borderRadius={'50%'}>
+            </Box>
+            <Box w={'36px'}
+            h={'36px'}
+            bg={'#d9d9d9'}
+            borderRadius={'50%'}>
+            </Box>
+            <Box w={'36px'}
+            h={'36px'}
+            bg={'#d9d9d9'}
+            borderRadius={'50%'}>
+            </Box>
+        </Flex>
+        
+        <Box width={'90%'}
+        h={'396px'}
+        p={'4px 16px'}
         >
-          {/* Jigsaw Puzzle Component */}
-          <JigsawPuzzle
-            imageSrc="./jigsawImage.png" // Image for the puzzle
-            rows={4}                     // Set rows for the puzzle
-            columns={6}                  // Set columns for the puzzle
-            onSolved={handleSolved}       // Trigger toast and enable button when solved
-          />
+        <Box
+        w={'100%'}
+        h={'388px'}
+        bgImage={"./rock.png"}
+        bgPosition={'center'}
+        bgRepeat={'no-repeat'}
+        bgSize={'173%'}
+        mx={'auto'}
+        display={'grid'}
+        gap={'8px'}
+        gridTemplateColumns={"repeat(3, 1fr)"}>
+            {Rectangle.map((box) => {
+                return(
+                <Image src={box.image} w={'100%'} h={'123px'} opacity={'0.9'}/>
+            )
+            })}
         </Box>
+        </Box>
+            <Text color={'#f5f5f5'} fontWeight={700}>
+                Score/Reward
+            </Text>
 
-        {/* Spin and Win Button */}
         <Button
           w={"342px"}
           h={"49px"}
@@ -164,12 +201,12 @@ export default function Jigsaw() {
           borderRadius={"20px"}
           onClick={handleClaimPoints}
           disabled={!isSolved} // Disable button until the puzzle is solved
-          _disabled={{ bg: "gray.500" }} // Styling for the disabled state
+          _disabled={{ bg: "#293042" }} // Styling for the disabled state
         >
-          Claim 10XP
+          0.00
         </Button>
-      </Flex>
 
+      </Flex>
       <NavigationBar />
     </Box>
   );

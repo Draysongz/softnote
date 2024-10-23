@@ -4,83 +4,83 @@ import NavigationBar from "../components/NavigationBar";
 
 const Upgrade = [
   {
-    image: "/icons/upgrade.png",
+    image: "/upgrade.png",
   },
   {
-    image: "/icons/upgrade.png",
+    image: "/upgrade.png",
   },
   {
-    image: "/icons/upgrade.png",
+    image: "/upgrade.png",
   },
 ];
 
 const Details = [
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "1k",
     cost: "24k",
     level: "2",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "2k",
     cost: "48k",
     level: "2",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "3k",
     cost: "64k",
     level: "3",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "4k",
     cost: "86k",
     level: "4",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "5k",
     cost: "98k",
     level: "5",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "6k",
     cost: "120k",
     level: "6",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "7k",
     cost: "148k",
     level: "7",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "8k",
     cost: "156k",
     level: "8",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "9k",
     cost: "198k",
     level: "9",
   },
   {
     name: "CEO",
-    image: "/icons/item.png",
+    image: "/Bot.png",
     pph: "10k",
     cost: "215k",
     level: "10",

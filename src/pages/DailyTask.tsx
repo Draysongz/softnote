@@ -3,38 +3,51 @@ import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import NavigationBar from "../components/NavigationBar";
 
-const YoutubeTask = [
-    {
-        image: "/icons/Youtube.png",
-        name: "SoftNote Youtube Introduction",
-        members: "100,000",
-        path: "/",
-    },
-    {
-        image: "/icons/Youtube.png",
-        name: "SoftNote XP Rush",
-        members: "100,000",
-        path: "/",
-    },
-    {
-        image: "/icons/Youtube.png",
-        name: "Crypto Funds Work-Out",
-        members: "100,000",
-        path: "/",
-    },
+const dailyTask = [
+  {
+      image: "/icons/twitter.png",
+      name: "Follow our X account",
+      reward: "100,000",
+      path: "/",
+  },
+  {
+      image: "/icons/telegram.png",
+      name: "Join our Telegram Main Channel",
+      reward: "100,000",
+      path: "/",
+  },
+  {
+      image: "/icons/telegram.png",
+      name: "Join our Telegram New Channel",
+      reward: "100,000",
+      path: "/",
+  },
+  {
+      image: "/icons/instagram.png",
+      name: "Follow us on Instagram",
+      reward: "100,000",
+      path: "/",
+  },
+  {
+      image: "/icons/facebook.png",
+      name: "Follow us on Facebook",
+      reward: "100,000",
+      path: "/",
+  },
+  {
+      image: "/icons/gcoin.png",
+      name: "Choose your Exchange",
+      reward: "100,000",
+      path: "/",
+  },
 ]
-
 
 export default function DailyTask() {
   return (
     <Box
       display={"flex"}
       flexDirection={"column"}
-      bgColor={"#12161F"}
-      bgImage={"./background.png"}
-      bgRepeat={"no-repeat"}
-      bgSize={"auto"}
-      bgPos={"center"}
+      bgGradient={'linear-gradient(360deg, #00283A 0%, #12161E 88.17%)'}
       width={"100vw"}
       minHeight={"100vh"}
       alignItems={"center"}
@@ -44,17 +57,22 @@ export default function DailyTask() {
       <Flex
         width={"100%"}
         minHeight={"100vh"}
-        bg={'rgba(29, 34, 46, .7)'}
+        bg={"rgba(29, 34, 46, .7)"}
         flexDirection={"column"}
         alignItems={"center"}
         pb={32}
         gap={5}
       >
-        <Box width={'100%'} bg={'rgba(29, 34, 46, 1)'} p={'20px'} pt={'30px'}>
-        <Text color={'#fff'} fontWeight={'700'} fontSize={'24px'} textAlign={'center'}>
+        <Box width={"100%"} bg={"#12161E"} p={"20px"} pt={"30px"}>
+          <Text
+            color={"#93BAFF"}
+            fontWeight={"700"}
+            fontSize={"24px"}
+            textAlign={"center"}
+          >
             Daily Tasks
-        </Text>
-        <Flex
+          </Text>
+          <Flex
             w={"100%"}
             alignItems={"center"}
             mt={4}
@@ -121,86 +139,52 @@ export default function DailyTask() {
             </Box>
           </Flex>
         </Box>
-        <Box width={'100%'} px={'16px'} display={'flex'} flexDirection={'column'} gap={3}
-        justifyContent={'space-between'}> 
-        <Text fontSize={'16px'} fontWeight={500} color={'#fff'}>
-            SoftNote Youtube
-        </Text>  
-        {YoutubeTask.map((youtube) => {
-            return(
-            <Link to={youtube.path}>
-            <Flex h={'80px'}
-            bg={'#1D222EB2'}
-            borderRadius={'16px'}
-            padding={'18px 16px'} borderBottom={'0.9px solid #fff'} gap={4} 
-            alignItems={'center'}>
-                <Flex alignItems={'center'} gap={4}>
-                <Image src={youtube.image} w={'48px'} h={'48px'}/>
-                <Flex direction={'column'}>
-                <Text fontSize={'14px'} fontWeight={600} color={'#f5f5f5'}>
-                    {youtube.name}
-                </Text>
-                <Text fontSize={'12px'} fontWeight={500} color={'#f5f5f5'}>
-                    + {youtube.members} XP
-                </Text>
-                </Flex>
-                </Flex>
-            </Flex>
-            </Link>
-            )
-        })}             
-        </Box>
-        <Box width={'100%'} px={'16px'} display={'flex'} flexDirection={'column'} gap={3}
-        justifyContent={'space-between'}> 
-        <Text fontSize={'16px'} fontWeight={500} color={'#fff'}>
-            Daily Tasks
-        </Text>
-            <Link to={''}>
-            <Flex h={'80px'}
-            bg={'#1D222EB2'}
-            borderRadius={'16px'}
-            padding={'18px 16px'} borderBottom={'0.9px solid #fff'} gap={4} 
-            alignItems={'center'} justifyContent={'space-between'}>
-                <Flex alignItems={'center'} gap={4}>
-                <Image src='/icons/BigCoin.png' w={'48px'} h={'48px'}/>
-                <Flex direction={'column'}>
-                <Text fontSize={'16px'} fontWeight={500} color={'#f5f5f5'}>
-                    Daily Reward
-                </Text>
-                </Flex>
-                </Flex>
-            <Box w={'12px'} h={'12px'} bg={'#00ff29'} borderRadius={'50%'}/>
-            </Flex>
-            </Link>
-        </Box>
-        <Box width={'100%'} px={'16px'} display={'flex'} flexDirection={'column'} gap={3}
-        justifyContent={'space-between'}> 
-        <Text fontSize={'16px'} fontWeight={500} color={'#fff'}>
+
+
+        <Box
+          width={"100%"}
+          px={"16px"}
+          display={"flex"}
+          flexDirection={"column"}
+          gap={3}
+          justifyContent={"space-between"}
+        >
+          <Text fontSize={"16px"} fontWeight={500} color={"#fff"}>
             Task List
-        </Text>
-            <Link to={''}>
-            <Flex h={'80px'}
-            bg={'#1D222EB2'}
-            borderRadius={'16px'}
-            padding={'18px 16px'} borderBottom={'0.9px solid #fff'} gap={4} 
-            alignItems={'center'} justifyContent={'space-between'}>
-                <Flex alignItems={'center'} gap={4}>
-                <Image src='/icons/twitter.png' w={'48px'} h={'48px'}/>
-                <Flex direction={'column'}>
-                <Text fontSize={'16px'} fontWeight={500} color={'#f5f5f5'}>
-                    Follow our X account
-                </Text>
-                <Flex alignItems={'center'}>
-                    <Image src="/icons/BigCoin.png" w={'14px'}/>
-                    <Text fontSize={'12px'} fontWeight={500} color={'#f5f5f5'}>
-                        + 100,000 XP
+          </Text>
+          {dailyTask.map((task) => {
+            return(
+          <Link to={""}>
+            <Flex
+              h={"80px"}
+              bg={"#1D222E"}
+              borderRadius={"16px"}
+              padding={"18px 16px"}
+              borderBottom={"0.9px solid #4979D1"}
+              gap={4}
+              alignItems={"center"}
+              justifyContent={"space-between"}
+            >
+              <Flex alignItems={"center"} gap={4}>
+                <Image src={task.image} w={"48px"} h={"48px"} />
+                <Flex direction={"column"}>
+                  <Text fontSize={"16px"} fontWeight={500} color={"#f5f5f5"}>
+                    {task.name}
+                  </Text>
+                  <Flex alignItems={"center"}>
+                    <Image src="/icons/BigCoin.png" w={"14px"} />
+                    <Text fontSize={"12px"} fontWeight={500} color={"#f5f5f5"}>
+                      + {task.reward} XP
                     </Text>
+                  </Flex>
                 </Flex>
-                </Flex>
-                </Flex>
-            <Box w={'12px'} h={'12px'} bg={'#f5f5f5'} borderRadius={'50%'}/>
+              </Flex>
+              <Box w={"12px"} h={"12px"} bg={"#f5f5f5"} borderRadius={"50%"} />
             </Flex>
-            </Link>
+          </Link>
+
+            )
+          })}
         </Box>
       </Flex>
       <NavigationBar />

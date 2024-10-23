@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Avatar } from "@chakra-ui/react";
+import { Box, Text, Flex, Avatar, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar";
 
@@ -44,38 +44,36 @@ const Communities = [
 export default function Community() {
   return (
     <Box
-      display={"flex"}
-      flexDirection={"column"}
-      bgColor={"#12161F"}
-      bgImage={"./background.png"}
-      bgRepeat={"no-repeat"}
-      bgSize={"auto"}
-      bgPos={"center"}
-      width={"100vw"}
-      minHeight={"100vh"}
-      alignItems={"center"}
-      textColor={"white"}
-      overflow={"hidden"}
+    display={"flex"}
+    flexDirection={"column"}
+    bgGradient={'linear-gradient(360deg, #00283A 0%, #12161E 88.17%)'}
+    width={"100vw"}
+    minHeight={"100vh"}
+    alignItems={"center"}
+    textColor={"white"}
+    overflow={"hidden"}
     >
       <Flex
         width={"100%"}
         minHeight={"100vh"}
-        bg={'rgba(29, 34, 46, .7)'}
         flexDirection={"column"}
         alignItems={"center"}
         pt={12}
         pb={32}
         gap={5}
       >
-        <Text color={'#fff'} fontWeight={'700'} fontSize={'24px'}>
+        <Text color={'#93baff'} fontWeight={'700'} fontSize={'24px'}>
             Join Community
         </Text>
-        <Box width={'100%'} px={'16px'} display={'flex'} flexDirection={'column'} gap={4}
+        <Box width={'100%'} px={'16px'} display={'flex'} flexDirection={'column'} gap={1}
         justifyContent={'space-between'}>   
         {Communities.map((community) => {
             return(
             <Flex h={'100px'}
-            padding={'18px 18px'} borderBottom={'0.9px solid #fff'} gap={4} 
+            padding={'18px 18px'}  
+            bg={'#12161e'}
+            gap={4}
+            borderBottom={"0.9px solid #4979D1"} 
             alignItems={'center'}
             justifyContent={'space-between'}>
                 <Flex alignItems={'center'} w={'163px'} gap={4}>
@@ -89,11 +87,11 @@ export default function Community() {
                 </Text>
                 </Flex>
                 </Flex>
-                <Text color={'#fff'} fontSize={'14px'} fontWeight={600}>
-                    <Link to={community.path}>
-                    Join
-                    </Link>
-                </Text>
+                <Link to={community.path}>  
+                <Button w={'60px'} h={'25px'} bg={'#4979d1'} color={'#fff'} fontSize={'10px'} fontWeight={600} _hover={{bg: '#4979d1'}} borderRadius={'20px'}>
+                  Join
+                </Button>
+            </Link>
             </Flex>
             )
         })}             

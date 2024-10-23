@@ -34,18 +34,15 @@ function DailyReward({}: Props) {
     <Flex
 
       minH={"100vh"}
-      bgImage={"/bgImage.png"}
-      bgColor={"#12161F"}
+      bgGradient={'linear-gradient(360deg, #00283A 0%, #12161E 88.17%)'}
       minW={"100vw"}
-      bgSize={"auto"}
       color={"white"}
       direction={"column"}
-      bgRepeat={"no-repeat"}
       gap={6}
     >
       <Flex direction={"column"} gap={2} p={5}>
         <Flex gap={1} justifyContent={"center"}>
-          <Heading fontSize={"24px"}>Daily Reward</Heading>
+          <Heading fontSize={"24px"} color={'#93BAFF'}>Daily Reward</Heading>
         </Flex>
 
         <Flex justifyContent={"space-between"} alignItems={"center"}>

@@ -6,26 +6,26 @@ import NavigationBar from "../components/NavigationBar";
 const socialTask = [
     {
         image: "/icons/invite.png",
-        name: "INVITE & EARN",
-        description: "Invite a Friend to Earn",
-        reward: "120",
-        task:'Invite & Earn',
+        name: "Invite & Earn",
+        reward: "100,000",
+        path: "/",
+    },
+    {
+        image: "/icons/telegram.png",
+        name: "Invite via Telegram Premium",
+        reward: "100,000",
         path: "/",
     },
     {
         image: "/icons/people-add.png",
-        name: "JOIN SOFTNOTE CHANNEL",
-        description: "Incentivize players to participate in Tectum official group.",
-        reward: "300",
-        task: 'Join Channel',
+        name: "Join Softnote Channel",
+        reward: "100,000",
         path: "/",
     },
     {
         image: "/icons/peers.png",
-        name: "JOIN SOFTNOTE COMMUNITY",
-        description: "Reach Milestone & Earn",
-        reward: "100",
-        task: "Join Community",
+        name: "Join Softnote Community",
+        reward: "100,000",
         path: "/",
     },
 ]
@@ -36,11 +36,7 @@ export default function SocialTask() {
     <Box
       display={"flex"}
       flexDirection={"column"}
-      bgColor={"#12161F"}
-      bgImage={"./background.png"}
-      bgRepeat={"no-repeat"}
-      bgSize={"auto"}
-      bgPos={"center"}
+      bgGradient={'linear-gradient(360deg, #00283A 0%, #12161E 88.17%)'}
       width={"100vw"}
       minHeight={"100vh"}
       alignItems={"center"}
@@ -49,15 +45,14 @@ export default function SocialTask() {
     >
       <Flex
         width={"100%"}
-        minHeight={"100vh"}
-        bg={'rgba(29, 34, 46, .7)'}
+        minHeight={"100vh"}   
         flexDirection={"column"}
         alignItems={"center"}
         pb={32}
         gap={5}
       >
         <Box width={'100%'} p={'20px'} pt={'30px'}>
-        <Text color={'#fff'} fontWeight={'700'} fontSize={'24px'} textAlign={'center'}>
+        <Text color={'#93BAFF'} fontWeight={'700'} fontSize={'24px'} textAlign={'center'}>
             Social Tasks
         </Text>
         <Flex
@@ -127,42 +122,50 @@ export default function SocialTask() {
             </Box>
           </Flex>
         </Box>
-        <Box width={'100%'} px={'16px'} display={'flex'} flexDirection={'column'} gap={3}
-        justifyContent={'space-between'}> 
-        
-        {socialTask.map((social) => {
+        <Box
+          width={"100%"}
+          px={"16px"}
+          display={"flex"}
+          flexDirection={"column"}
+          gap={3}
+          justifyContent={"space-between"}
+        >
+          <Text fontSize={"16px"} fontWeight={500} color={"#fff"}>
+            Task List
+          </Text>
+          {socialTask.map((task) => {
             return(
-            <Link to={social.path}>
-            <Flex h={'88px'}
-            bg={'#1D222EB2'}
-            borderRadius={'16px'}
-            padding={'18px 4px'} borderTop={'0.9px solid #4979D1'} gap={4} 
-            alignItems={'center'}>
-                <Flex alignItems={'center'} gap={4}>
-                
-                <Box w={'88px'} height={'88px'} bg={'#293042'} display={'flex'} flexDirection={'column'} borderRadius={'10px'} gap={'5px'} justifyContent={'center'} alignItems={'center'} py={'10px'}
-                boxShadow={'0px -2px 8px 0px #F8F9FD33 inset'} >
-                    <Image src={social.image} w={'28px'}/>
-                    <Text width={'72px'} height={'34px'} fontSize={'14px'} fontWeight={500} textAlign={'center'} lineHeight={'16.94px'}>
-                        {social.task}
+          <Link to={""}>
+            <Flex
+              h={"80px"}
+              bg={"#1D222E"}
+              borderRadius={"16px"}
+              padding={"18px 16px"}
+              borderBottom={"0.9px solid #4979D1"}
+              gap={4}
+              alignItems={"center"}
+              justifyContent={"space-between"}
+            >
+              <Flex alignItems={"center"} gap={4}>
+                <Image src={task.image} w={"48px"} h={"48px"} />
+                <Flex direction={"column"}>
+                  <Text fontSize={"16px"} fontWeight={500} color={"#f5f5f5"}>
+                    {task.name}
+                  </Text>
+                  <Flex alignItems={"center"}>
+                    <Image src="/icons/BigCoin.png" w={"14px"} />
+                    <Text fontSize={"12px"} fontWeight={500} color={"#f5f5f5"}>
+                      + {task.reward} XP
                     </Text>
-                </Box>
-                <Flex direction={'column'} w={'58%'}>
-                <Text fontSize={'14px'} fontWeight={600} color={'#f5f5f5'}>
-                    {social.name}
-                </Text>
-                <Text fontSize={'12px'} fontWeight={500} color={'#f5f5f5'}>
-                    {social.description}
-                </Text>
-                <Text fontSize={'12px'} fontWeight={500} color={'#4979d1'}>
-                   {social.reward} XP
-                </Text>
+                  </Flex>
                 </Flex>
-                </Flex>
+              </Flex>
+              <Box w={"12px"} h={"12px"} bg={"#f5f5f5"} borderRadius={"50%"} />
             </Flex>
-            </Link>
+          </Link>
+
             )
-        })}             
+          })}
         </Box>
       </Flex>
       <NavigationBar />
