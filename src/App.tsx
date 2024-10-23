@@ -19,6 +19,8 @@ import { useEffect, useState } from "react";
 import WebApp from "@twa-dev/sdk";
 import { useLocation } from "react-router-dom";
 import Puzzle from "./pages/Puzzle";
+import { useUserLogin } from "./hooks/useAuth";
+
 
 function BackButtonHandler() {
   const location = useLocation(); // Use React Router's useLocation to track route changes
@@ -50,38 +52,29 @@ function BackButtonHandler() {
 }
 
 function App() {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [isLoading, setIsLoading] = useState(true);
+  const [telegramInitData, setTelegramInitData] = useState<string>("");
+  const queryString = window.location.search; // Get the query string
+  const urlParams = new URLSearchParams(queryString);
+  const referralId = urlParams.get("referralCode")!;
 
-  useEffect(()=>{
-    const user = WebApp?.initDataUnsafe?.user
-    if(user){
-      setFirstName(user.first_name)
-      setLastName(user.last_name!)
-    }
+ useEffect(() => {
+   WebApp.expand();
+   const initData = WebApp.initData;
+   setTelegramInitData(initData);
+ }, []);
 
-  })
+ const { userData } = useUserLogin(telegramInitData, referralId);
+ console.log("userdata from app.tx", userData);
 
-  useEffect(() => {
-    // Set timeout to change loading state after 15 seconds (15000ms)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 5000); // 15 seconds
-
-    // Clean up the timer if the component unmounts before 15 seconds
-    return () => clearTimeout(timer);
-  }, []);
-
-  if(isLoading){
+  if (!userData) {
     return <Loading />;
   }
 
-  console.log(firstName)
+
   return (
     
         <Routes>
-          <Route index element={<Homepage firstName={firstName} lastName={lastName}/>} />
+          <Route index element={<Homepage userData={userData}/>} />
           <Route path="/challenges" element={<DailyChallenge />} />
           <Route path="/dailytask" element={<DailyTask />} />
           <Route path="/socials" element={<SocialTask />} />

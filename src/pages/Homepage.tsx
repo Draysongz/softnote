@@ -21,7 +21,7 @@ const SmallCardArray = [
   },
 ];
 
-export default function Homepage({lastName, firstName}: {lastName: string, firstName: string}) {
+export default function Homepage({userData}: {userData: any}) {
   return (
     <Box
       display={"flex"}
@@ -51,7 +51,7 @@ export default function Homepage({lastName, firstName}: {lastName: string, first
             />
 
             <Text fontWeight={"700"} fontSize={"20px"} color={"#F5F5F5"}>
-              {`${firstName} ${lastName}`}
+              {userData && userData.user.username}
             </Text>
           </Flex>
           <Flex
